@@ -1,0 +1,23 @@
+@use "sass:meta";
+@use "variables";
+@use "helpers/color";
+@use "helpers/icon-size";
+@use "themecolors/default_theme";
+@use "@angular/material" as mat;
+
+@include mat.core();
+
+// Include your other CSS files
+@include mat.all-component-themes(default_theme.$bluetheme);
+
+//container layout
+@include meta.load-css("overrides/materialoverrides");
+@include meta.load-css("container");
+@include meta.load-css("layouts/layouts");
+@include meta.load-css("grid/grid");
+@include meta.load-css("helpers/custom-flex");
+@include meta.load-css("helpers/index");
+
+// pages
+@include meta.load-css("pages/dashboards");
+@include meta.load-css("pages/auth");

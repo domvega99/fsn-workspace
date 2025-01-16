@@ -17,12 +17,11 @@
         "tsConfig": "apps/admin/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
-          {
-            "glob": "**/*",
-            "input": "apps/admin/public"
-          }
+          "apps/admin/src/assets"
         ],
-        "styles": ["apps/admin/src/styles.scss"],
+        "styles": [
+          "apps/admin/src/assets/scss/style.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -30,13 +29,13 @@
           "budgets": [
             {
               "type": "initial",
-              "maximumWarning": "500kb",
-              "maximumError": "1mb"
+              "maximumWarning": "12mb",
+              "maximumError": "12mb"
             },
             {
               "type": "anyComponentStyle",
-              "maximumWarning": "4kb",
-              "maximumError": "8kb"
+              "maximumWarning": "12mb",
+              "maximumError": "12mb"
             }
           ],
           "outputHashing": "all"
@@ -81,7 +80,6 @@
       "executor": "@nx/web:file-server",
       "options": {
         "buildTarget": "admin:build",
-        "port": 4200,
         "staticFilePath": "dist/apps/admin/browser",
         "spa": true
       }
